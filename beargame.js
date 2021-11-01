@@ -36,13 +36,6 @@ function Bear()
    };
    
 }
-function start() {
-
-  bear = new Bear();       //create bear
-  document.addEventListener("keydown", moveBear, false);       // Add an event listener to the keypress event.
-
-}
-  
 
 // Handle keyboad events 
 // to move the bear
@@ -163,3 +156,14 @@ function makeBees() {
    }
 }
   
+function start() {
+
+  bear = new Bear();       //create bear
+  document.addEventListener("keydown", moveBear, false);       // Add an event listener to the keypress event.
+  //create new array for bees
+  bees = new Array();
+  //create bees
+  makeBees();
+ 
+ 
+}
