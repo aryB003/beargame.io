@@ -20,6 +20,8 @@
     <script>
        var bear;
        var bees;
+       var updateTimer;
+       var lastStingTime;
     </script>
 
 
@@ -28,8 +30,10 @@
         <div id="title">
             <h1>Help the bear escape the bees !</h1>
             <p>Bear tries to avoid being stung by <input type="text" id="nbBees" value="1" size="3"> bees by running and jumping. The objective is to have as less stings as possible!</p>
-            <p>You can ajust bees' speed <input type="text" id="speedBees" value="50" size="3"> px/ms
+            <p>You can adjust bees speed <input type="text" id="speedBees" value="50" size="3"> px/ms
+            <p>You can adjust bear speed <input type="text" id="speedBear" onchange="setSpeed()" value="100" size="3"> px/ms
                 <br> and the refresh period <input type="text" id="periodTimer" value="10" size="3"> ms </p>
+                <button onclick = "addBees()"> Add more Bees   </button>
             <h2>Press left, right, up, down keys to move the bear</h2>
 
         </div>
@@ -41,6 +45,7 @@
                     </td>
                     <td>
                         <p>Best duration: [<span id="duration">?</span>]</p>
+
                     </td>
                 </tr>
             </table>
