@@ -120,12 +120,6 @@ class Bee {
    }
 }
 
-function getRandomInt(mx){
-
-   var r =Math.floor(Math.random()*mx);
-   return r;
-}
-
 function createBeeImg(wNum) {
    //get dimension and position of board div
    let boardDiv = document.getElementById("board");
@@ -152,7 +146,11 @@ function createBeeImg(wNum) {
    return img;
 }
 
+function getRandomInt(mx){
 
+   var r =Math.floor(Math.random()*mx);
+   return r;
+}
 
 function makeBees() {
    //get number of bees specified by the user
@@ -240,7 +238,7 @@ function isHit(defender, offender) {
       if(score == 1000)
       {
          clearTimeout(updateTimer);
-         window.log(alert("GAME OVER"));
+         window.log(alert("GAME OVER    Just like my life"));
      
       }
       let newStingTime = new Date();
