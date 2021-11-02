@@ -32,6 +32,7 @@ function Bear()
    };
    this.display = function() 
    {
+      this.fitBounds();
       this.htmlElement.style.left = this.x + "px";
       this.htmlElement.style.top = this.y + "px";
       this.htmlElement.style.display = "block";
@@ -83,6 +84,7 @@ class Bee {
    this.y = this.htmlElement.offsetTop;
 
    this.move = function(dx, dy) {
+      this.fitBounds();
       //move the bees by dx, dy
       this.x += dx;
       this.y += dy;
@@ -237,16 +239,16 @@ function isHit(defender, offender) {
       hits.innerHTML = score; //display the new score
       if(score == 1000)
       {
-      clearTimeout(updateTimer);
-      window.log(alert("GAME OVER"));
+         clearTimeout(updateTimer);
+         window.log(alert("GAME OVER"));
      
       }
       let newStingTime = new Date();
       let thisDuration = newStingTime - lastStingTime;
       lastStingTime = newStingTime;
-      let longestDuration = Number(thisDuration);
-      if (longestDuration === 0) {
-       longestDuration = thisDuration;
+      let longestDuration = Number(duration.innerHTML);
+      if (longestDuration === 0 || isNaN(longestDuration)) {
+         longestDuration = thisDuration;
       } 
       else {
           if (longestDuration < thisDuration) longestDuration = thisDuration;
