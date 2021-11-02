@@ -238,7 +238,7 @@ function isHit(defender, offender) {
       if(score == 1000)
       {
          clearTimeout(updateTimer);
-         window.log(alert("GAME OVER    Just like my life"));
+         window.log(alert("GAME OVER  Just like my life "));
      
       }
       let newStingTime = new Date();
